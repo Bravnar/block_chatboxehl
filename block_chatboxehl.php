@@ -14,23 +14,71 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
-defined('MOODLE_INTERNAL') || die();
+/**
+ * Block definition class for the block_chatboxehl plugin.
+ *
+ * @package    block_chatboxehl
+ * @copyright  2026, Stanislav Muravyev <stanislav.muravyev@ehl.ch>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
-class block_exaaichat extends block_base
+/**
+ * Block definition class for the block_chatboxehl plugin.
+ */
+class block_chatboxehl extends block_base
 {
+    /**
+     * Initialises the block title.
+     */
     public function init(): void {
         $this->title = get_string('pluginname', 'block_chatboxehl');
     }
 
-    public function get_content() {
+    /**
+     * Gets the block content.
+     *
+     * @return stdClass The block content.
+     */
+    public function get_content(): stdClass {
+        global $OUTPUT;
+
         if ($this->content !== null) {
             return $this->content;
         }
 
         $this->content = new stdClass();
-        $this->content->text = 'Chatbox EHL placeholder';
         $this->content->footer = '';
 
+        $data = [
+            'message' => get_string('welcome', 'block_chatboxehl'),
+        ];
+
+        $this->content->text = $OUTPUT->render_from_template('block_chatboxehl/content', $data);
+
         return $this->content;
+    }
+
+    /**
+     * Defines where this block can be added.
+     *
+     * @return array Applicable formats.
+     */
+    public function applicable_formats(): array {
+        return [
+            'admin' => false,
+            'site-index' => false,
+            'course-view' => true,
+            'mod' => false,
+            'my' => true,
+        ];
+    }
+
+    /**
+     * Hides the default block header.
+     *
+     * @return bool Whether the block header should be hidden.
+     */
+    public function hide_header(): bool {
+        return true;
     }
 }

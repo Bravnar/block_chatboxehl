@@ -14,4 +14,15 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
-$string['pluginname'] = 'Chatbox EHL';
+/**
+ * Language strings for the block_chatboxehl plugin.
+ *
+ * @package   block_chatboxehl
+ * @copyright 2026, Stanislav Muravyev <stanislav.muravyev@ehl.ch>
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+$string['chatboxehl:addinstance'] = 'Add a new EHL chatbox block';
+$string['chatboxehl:myaddinstance'] = 'Add a new EHL chatbox block to Dashboard';
+$string['pluginname'] = 'EHL Chatbox block';
+$string['welcome'] = 'Welcome to the EHL chatbox.';

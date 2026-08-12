@@ -15,12 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * MCP web service plugin version information.
+ * ChatboxEHL plugin information
  *
- * @package     webservice_mcp
- * @author      MohammadReza PourMohammad <onbirdev@gmail.com>
- * @copyright   2025 MohammadReza PourMohammad
- * @link        https://onbir.dev
+ * @package     block_chatboxehl
+ * @author      Stanislav Muravyev <stanislav.muravyev@ehl.ch>
+ * @copyright   2026 Stanislav Muravyev Bravnar
+ * @link        https://www.ehl.edu
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -28,6 +28,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->version = 2026081100;
 $plugin->requires = 2024100700;
-$plugin->component = 'chatbox_ehl';
+$plugin->component = 'block_chatboxehl';
 $plugin->maturity = MATURITY_ALPHA;
 $plugin->release = '0.0.1';
